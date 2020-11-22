@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JS Error Management - Basic Error Management Syntax in JavaScript</title>
+</head>
+
+<body>
+    <h1>Modern JS Error Management - Basic Error Management Syntax in JavaScript</h1>
+</body>
+
+<script>
+    function siteComponent(func) {
+      return func();
+    }
+    widget = () => {
+      return '<div>Hi there</div>';
+    }
+    try {
+      console.log(siteComponent('oops'));
+    } catch(e) {
+      console.log('An error occurred', e);
+    }
+    
+    console.log(siteComponent(widget));
+</script>
+</html>

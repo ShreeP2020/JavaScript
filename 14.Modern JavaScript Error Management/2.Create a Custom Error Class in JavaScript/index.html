@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JS Error Management - How to Create a Custom Error Class in JavaScript</title>
+</head>
+
+<body>
+    <h1>Modern JS Error Management - How to Create a Custom Error Class in JavaScript</h1>
+</body>
+
+<script>
+  class DevcampError extends Error {
+    constructor(msg = 'An error occurred', ...params) {
+      super(...params);
+
+      this.msg = msg;
+    }
+  }
+
+  function siteComponent(func) {
+    return func();
+  }
+
+  widget = () => {
+    return '<div>Hi there</div>';
+  }
+  console.log(siteComponent(widget));
+
+  try {
+    console.log(siteComponent('oops'));
+  } catch(e) {
+    throw new DevcampError('DevcampError', e);
+  }
+
+</script>
+</html>
